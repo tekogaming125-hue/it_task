@@ -15,10 +15,11 @@ header {
     left: 0;
     width: 100%;
     display: flex;
+    margin-top: -40px;
     justify-content: space-between;
     /* بيوزع العناصر: واحد شمال، واحد نص، واحد يمين */
     align-items: center;
-    padding: 20px 40px;
+    padding: 20px 30px;
     /* مسافة داخلية من الجوانب */
     z-index: 1000;
     background: transparent;
@@ -46,9 +47,16 @@ header {
     letter-spacing: 3px;
     color: #000000;
     font-family: 'Michroma', sans-serif;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* مسافة بين اللوجو والكلمة */
 }
 
+.logo {
+    width: 60px;
+    height: auto;
+}
 
 .menu-btn {
     cursor: pointer;
@@ -157,10 +165,10 @@ header {
 
 .card {
     width: 100%;
-    width: 1400;
+    width: 1400px;
     height: 980px;
     margin: auto;
-    margin-top: 90px;
+    margin-top: 100px;
     margin-bottom: 50px;
     border-radius: 40px;
     overflow: hidden;
@@ -212,7 +220,7 @@ ul {
 
 .img_2 {
     width: 100%;
-    width: 7000px;
+    width: 700px;
     height: 450px;
     border-radius: 0 40px 0 0;
 }
