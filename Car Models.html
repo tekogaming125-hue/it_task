@@ -4,7 +4,7 @@
     <meta charset="UTF_8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Car Models.css">
-    <title></title>
+    <title>Car Models</title>
     <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
 </head>
 
@@ -15,18 +15,23 @@
             <span></span>
             <span></span>
         </div>
-        <div class="name">FUÊRZÁ</div>
+        <div class="name">
+            <!-- <img src="Assets\Images\FUERZA_logo-removebg-preview.png" alt="" class="logo"> -->
+            FUÊRZÁ
+        </div>
         <div class="icon">🌐</div>
     </header>
     <div id="sidebar" class="sidebar">
         <ul class="sidebar-links">
             <li><a href="Index.html"><span>Home</span><span class="arrow">></span></a></li>
             <li><a href="Car Models.html"><span>Car Models</span><span class="arrow">></span></a></li>
+            <li><a href="Download Catalogs.html"><span>Download Catalogs</span><span class="arrow">></span></a></li>
             <li><a href="Compare Cars.html"><span>Compare Cars</span><span class="arrow">></span></a></li>
             <li><a href="Book A Test Driver.html"><span>Book A Test Driver</span><span class="arrow">></span></a></li>
             <li><a href="Find A Dealer.html"><span>Find A Dealer</span><span class="arrow">></span></a></li>
-            <li><a href="About Us.html"><span>About Us</span><span class="arrow">></span></a></li>
             <li><a href="Contact Us.html"><span>Contact Us</span><span class="arrow">></span></a></li>
+            <li><a href="Login.html"><span>Login</span><span class="arrow">></span></a></li>
+            <li><a href="About Us.html"><span>About Us</span><span class="arrow">></span></a></li>
         </ul>
     </div>
     <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
@@ -35,18 +40,161 @@
 
         <div class="car1">
             <video autoplay muted loop poster="Assets/Images/porsche 911.jpg" class="back1">
-                <source src="Assets/Videos/porsche 911.mp4" type="video/mp4">
+                <source src="Assets/Videos/Hero.mp4" type="video/mp4">
                 your browser doesn't support HTML5 video.
             </video>
+            <div class="video-overlay"></div>
             <div class="content">
                 <div class="model">
                     911.
                 </div>
-                <a href="" Download class="download-btn"> Download Catalog</a>
+                <a href="" Download class="download-btn"> Discover more</a>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="porsche-journey">
+        <h2 class="model-title">Your Porsche journey starts now.</h2>
+
+        <div class="cards-container">
+            <div class="card" onmouseenter="playVid(this)" onmouseleave="pauseVid(this)">
+                <div class="media-wrapper">
+                    <img src="Assets/Images/911.jpeg" class="card-img">
+                    <video src="Assets/Videos/911.mp4" loop muted class="card-video"></video>
+                </div>
+                <div class="card-content">
+                    <div class="model-info">
+                        <h3>911</h3>
+                        <p>Iconic sports car with rear engine.</p>
+                    </div>
+                    <a href="#" class="explore-btn">Explore &rarr;</a>
+                </div>
+            </div>
+
+            <div class="card" onmouseenter="playVid(this)" onmouseleave="pauseVid(this)">
+                <div class="media-wrapper">
+                    <img src="Assets/Images/911-turbo.jpeg" class="card-img">
+                    <video src="Assets/Videos/911-turbo.mp4" loop muted class="card-video"></video>
+                </div>
+                <div class="card-content">
+                    <div class="model-info">
+                        <h3>911 Turbo</h3>
+                        <p>Precise mid-engine sports car.</p>
+                    </div>
+                    <a href="#" class="explore-btn">Explore &rarr;</a>
+                </div>
+            </div>
+        </div>
+        <div class="cards-container">
+            <div class="card" onmouseenter="playVid(this)" onmouseleave="pauseVid(this)">
+                <div class="media-wrapper">
+                    <img src="Assets/Images/panamera.jpeg" class="card-img">
+                    <video src="Assets/Videos/panerma.mp4" loop muted class="card-video"></video>
+                </div>
+                <div class="card-content">
+                    <div class="model-info">
+                        <h3>Panamera</h3>
+                        <p>Electric sports car: 4 doors, 4/5 seats.</p>
+                    </div>
+                    <a href="#" class="explore-btn">Explore &rarr;</a>
+                </div>
+            </div>
+
+            <div class="card" onmouseenter="playVid(this)" onmouseleave="pauseVid(this)">
+                <div class="media-wrapper">
+                    <img src="Assets/Images/WhatsApp Image 2026-04-26 at 11.59.38 PM (3).jpeg" class="card-img">
+                    <video src="Assets/Videos/taycan.mp4" loop muted class="card-video"></video>
+                </div>
+                <div class="card-content">
+                    <div class="model-info">
+                        <h3>Taycan 4s</h3>
+                        <p>Luxury sedan with a high level of comfort: 4 doors, 4/5</p>
+                    </div>
+                    <a href="#" class="explore-btn">Explore &rarr;</a>
+                </div>
+            </div>
+        </div>
+        <div class="cards-container">
+            <div class="card" onmouseenter="playVid(this)" onmouseleave="pauseVid(this)">
+                <div class="media-wrapper">
+                    <img src="Assets/Images/WhatsApp Image 2026-04-26 at 11.59.38 PM (4).jpeg" class="card-img">
+                    <video src="Assets/Videos/taycan-turbo.mp4" loop muted class="card-video"></video>
+                </div>
+                <div class="card-content">
+                    <div class="model-info">
+                        <h3>Taycan Turbo</h3>
+                        <p>Sporty compact SUV: 4 doors, 5 seats.</p>
+                    </div>
+                    <a href="#" class="explore-btn">Explore &rarr;</a>
+                </div>
+            </div>
+
+            <div class="card" onmouseenter="playVid(this)" onmouseleave="pauseVid(this)">
+                <div class="media-wrapper">
+                    <img src="Assets/Images/2020-porsche-taycan_100714962.jpg" class="card-img">
+                    <video src="Assets/Videos/WhatsApp Video 2026-04-25 at 8.19.00 AM.mp4" loop muted class="card-video"></video>
+                </div>
+                <div class="card-content">
+                    <div class="model-info">
+                        <h3>718</h3>
+                        <p>Versatile SUV: 4 doors, up to 5 seats.</p>
+                    </div>
+                    <a href="#" class="explore-btn">Explore &rarr;</a>
+                </div>
             </div>
         </div>
     </section>
-    <footer></footer>
+
+    <footer>
+<footer class="porsche-footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Locations & Contacts</h3>
+      <ul>
+        <li><a href="#">Get in touch</a></li>
+        <li><a href="#">Subscribe to newsletter</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Company & Support</h3>
+      <ul>
+        <li><a href="#">Porsche Cars North America</a></li>
+        <li><a href="#">Recall Information</a></li>
+        <li><a href="#">Career</a></li>
+        <li><a href="#">Global Partnership Council</a></li>
+        <li><a href="#">Compliance</a></li>
+        <li><a href="#">Sustainability</a></li>
+        <li><a href="#">Newsroom & Press</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Porsche on the web</h3>
+      <ul>
+        <li><a href="#">Porsche Homepage</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Porsche Configurator</a></li>
+        <li><a href="#">Find New and Pre-owned Vehicles</a></li>
+        <li><a href="#">Porsche Connect</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="footer-divider">
+
+  <div class="footer-bottom">
+    <p>© 2026 Porsche Cars North America, Inc.</p>
+    <div class="legal-links">
+      <a href="#">Legal notice</a> | <a href="#">Privacy notice</a> | <a href="#">California Privacy</a> | <a href="#">Accessibility Statement</a>
+    </div>
+    <h1 class="brand-logo">FUÊRZÁ</h1>
+  </div>
+</footer>
+
+
+    </footer>
     <script>
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
@@ -57,6 +205,16 @@
             sidebar.classList.toggle('active');
             overlay.classList.toggle('show');
             menuIcon.classList.toggle('open');
+        }
+        function playVid(card) {
+            const video = card.querySelector('.card-video');
+            video.play();
+        }
+
+        function pauseVid(card) {
+            const video = card.querySelector('.card-video');
+            video.pause();
+            video.currentTime = 0; // يرجع لأول الفيديو لما تبعد الماوس
         }
 
     </script>
