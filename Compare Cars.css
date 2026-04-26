@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+<<<<<<< HEAD
 }
 body {
     
@@ -192,4 +193,7 @@ thead th {
 
 tbody tr {
     font-size: 20px;
+=======
+    font-family: 'Poppins', sans-serif;
+>>>>>>> b69db4f41fa02a1ef50b25098ccbc5f5b44f1d39
 }
