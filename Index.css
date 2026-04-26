@@ -8,16 +8,16 @@
 
 /* HEADER */
 header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    z-index: 1000;
+    padding: 15px 40px;
+    z-index: 9999;
     background: transparent;
+    
 }
 
 
@@ -28,20 +28,28 @@ header {
 .icon {
     display: flex;
     justify-content: flex-end;
+    flex:1;
+    align-items: center;
+
 }
 
 .name {
     flex: 2;
     text-align: center;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
-    letter-spacing: 3px; 
+    letter-spacing: 5px; 
     color: white;
     font-family: 'Michroma', sans-serif;
+    text-shadow: 0 0 15px rgba(0,0,0,0.7);
 }
 
 /* MENU ICON */
 .menu-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
     position: relative;
     z-index: 1100;
     cursor: pointer;
@@ -49,10 +57,10 @@ header {
 
 .menu-btn span {
     display: block;
-    width: 25px;
+    width: 28px;
     height: 2px;
     background-color: white;
-    margin: 5px 0;
+    margin: 4px 0;
     transition: 0.3s;
 }
 
@@ -152,4 +160,16 @@ header {
     height: 100vh;
     transform: translate(-50%, -50%);
     pointer-events: none;
+}
+
+.logo {
+    padding: 6px;
+    border-radius: 8px;
+    top: 20px;
+    right: 30px;
+    width: 90px;
+    transition:0.3s;
+}
+.logo:hover {
+    transform: scale(1.1);
 }
