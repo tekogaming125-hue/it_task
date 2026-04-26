@@ -7,10 +7,10 @@
 body {
     
     text-align: center;
-    background-color: white;
-}
+    background-color: #828891;
 
-/* HEADER */
+}
+   
 header {
     position: absolute;
     top: 0;
@@ -19,14 +19,12 @@ header {
     display: flex;
     margin-top: -40px;
     justify-content: space-between;
-    justify-content: center;
     /* بيوزع العناصر: واحد شمال، واحد نص، واحد يمين */
     align-items: center;
-    padding: 5px 20px;
+    padding: 20px 30px;
     /* مسافة داخلية من الجوانب */
     z-index: 1000;
     background: transparent;
-    background-color: #000000;
 }
 
 /* عشان نضمن إن اللوجو يفضل في النص بالظبط حتى لو العناصر اللي جنبه أحجامها مختلفة */
@@ -49,7 +47,7 @@ header {
     font-size: 30px;
     font-weight: 450;
     letter-spacing: 3px;
-    color: white;
+    color: #000000;
     font-family: 'Michroma', sans-serif;
     display: flex;
     justify-content: center;
@@ -70,7 +68,7 @@ header {
     display: block;
     width: 28px;
     height: 3px;
-    background-color: white;
+    background-color: #000000;
     margin: 5px 3px;
     transition: 0.3s;
 }
@@ -154,7 +152,7 @@ header {
 
 .menu-btn.open span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
-    background-color: black;
+    background-color: #828891;
     /* تغيير اللون لأسود عشان يبان فوق المنيو البيضاء */
 }
 
@@ -164,13 +162,14 @@ header {
 
 .menu-btn.open span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -7px);
-    background-color: black;
+    background-color: #828891;
 }
  
 h2{
     font-weight: bold;
     text-align: center;
     padding: 40px 0 25px;
+    color: #000000;
 
 }
 
@@ -178,24 +177,41 @@ h2{
 
 table {
     color: black;
-    background-color: #E5E5E5;
-     border: 1px solid #444;
-     border-collapse:collapse ;
+     border-collapse:collapse;
+     border: 2px solid rgba(225, 225, 225, 0.3);
+     overflow: hidden;
+     border-radius: 10px;
      width: 100%;
     margin: 80px auto;
+    background-image: url(Assets/Images/porsche-911-turbo-s-2025.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
 }
 
 thead {
-    background-color:  #2c3e50;
-    color: white;
+    background-color:  #4a4f55;
+   
 }
 
 
 table th,table td {
-    padding: 20px 15px;
+    padding: 15px;
     text-align: center;
-    border: 1px solid #ccc;
+    border: 1.5px solid #DEB887;
     border-collapse: collapse;
+    backdrop-filter: blur(3px);
+    font-size: blod;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+table th {
+    border-bottom: 3px solid #FFFDD0;
+    background-color: rgba(0, 0, 0, 0.5);
+
 }
 
 table img {
@@ -210,17 +226,17 @@ table img:hover {
 }
 
 tbody tr:hover {
-background-color: #DCDCDC;
+background-color: rgba(0, 0, 0, 0.5);
 transition: 0.3;
 }
 
 thead th {
     font-size: 25px;
+    color: white;
 }
 
 tbody tr {
     font-size: 20px;
-=======
     font-family: 'Poppins', sans-serif;
->>>>>>> b69db4f41fa02a1ef50b25098ccbc5f5b44f1d39
+    font-size: blod;
 }
