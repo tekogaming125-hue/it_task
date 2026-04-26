@@ -6,47 +6,52 @@
         <title>Compare Cars</title>
     </head>
 
-    <script>
-         function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-            const menuIcon = document.getElementById('menu-icon');
+     <script>
+            function toggleSidebar() {
+                const sidebar = document.getElementById('sidebar');
+                const overlay = document.getElementById('overlay');
+                const menuIcon = document.getElementById('menu-icon');
 
-            sidebar.classList.toggle('active');
-            overlay.classList.toggle('show');
-            menuIcon.classList.toggle('open');
-        }
-    </script>
+                // تبديل الكلاسات
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('show');
+                menuIcon.classList.toggle('open');
+            }
+        </script>
       
     <body>
         <!-- HEADER -->
         <header>
+
             <div id="menu-icon" class="menu-btn" onclick="toggleSidebar()">
                 <span></span>
                 <span></span>
                 <span></span>
+                Menu
             </div>
 
-            <div class="name">FUÊRZÁ</div>
+            <div class="name"><img src="Assets\Images\FUERZA_logo-removebg-preview.png" alt="" class="logo"> FUÊRZÁ</div>
 
             <div class="icon">🌐</div>
+
         </header>
 
             <!-- SIDEBAR -->
         <div id="sidebar" class="sidebar">
             <ul class="sidebar-links">
-                <li><a href="Index.html">Home</a></li>
-                <li><a href="Car Models.html">Car Models</a></li>
-                <li><a href="Compare Cars.html">Compare Cars</a></li>
-                <li><a href="Book A Test Driver.html">Book A Test Driver</a></li>
-                <li><a href="Find A Dealer.html">Find A Dealer</a></li>
-                <li><a href="About Us.html">About Us</a></li>
-                <li><a href="Contact Us.html">Contact Us</a></li>
+                <li><a href="Index.html"><span>Home</span><span class="arrow">></span></a></li>
+                <li><a href="Car Models.html"><span>Car Models</span><span class="arrow">></span></a></li>
+                <li><a href="Download Catalogs.html"><span>Download Catalogs</span><span class="arrow">></span></a></li>
+                <li><a href="Compare Cars.html"><span>Compare Cars</span><span class="arrow">></span></a></li>
+                <li><a href="Book A Test Driver.html"><span>Book A Test Driver</span><span class="arrow">></span></a></li>
+                <li><a href="Find A Dealer.html"><span>Find A Dealer</span><span class="arrow">></span></a></li>
+                <li><a href="Contact Us.html"><span>Contact Us</span><span class="arrow">></span></a></li>
+                <li><a href="Login.html"><span>Login</span><span class="arrow">></span></a></li>
+                <li><a href="About Us.html"><span>About Us</span><span class="arrow">></span></a></li>
             </ul>
         </div>
-
+        
         <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
-
    
 
          <table>
