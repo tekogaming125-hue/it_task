@@ -5,34 +5,253 @@
     font-family: 'Poppins', sans-serif;
 }
 
-header {
-    background-color: ;
-    color: ;
-    padding: ;
-    text-align: center;
-    font-size: 22px;
+body {
+    background-color: #828891;
 }
 
-div {
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    width: 1240px;
-    height: 460px;
+    display: flex;
+    justify-content: space-between;
+    /* بيوزع العناصر: واحد شمال، واحد نص، واحد يمين */
+    align-items: center;
+    padding: 20px 40px;
+    /* مسافة داخلية من الجوانب */
+    z-index: 1000;
+    background: transparent;
+}
+
+/* عشان نضمن إن اللوجو يفضل في النص بالظبط حتى لو العناصر اللي جنبه أحجامها مختلفة */
+.menu-btn,
+.icon {
+    flex: 1;
+    /* بيخلي الجانب اليمين والشمال واخدين نفس المساحة */
+}
+
+.icon {
+    display: flex;
+    justify-content: flex-end;
+    /* بيحدف الأيقونة لآخر اليمين */
+}
+
+.name {
+    flex: 2;
+    /* بيدي مساحة أكبر للوجو في النص */
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #000000;
+    font-family: 'Michroma', sans-serif;
+
+}
+
+
+.menu-btn {
+    cursor: pointer;
+}
+
+.menu-btn span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #000000;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* --- السايد بار --- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    /* مخفي جهة الشمال */
+    width: 280px;
+    height: 100%;
+    background-color: #ffffff8a;
+    z-index: 1000;
+    transition: 0.4s ease;
+    padding: 45px 0 40px 0;
+}
+
+.sidebar.active {
+    left: 0;
+    /* يظهر لما نضيف كلاس active */
+}
+
+.sidebar-links {
+    list-style: none;
+    width: 100%;
+}
+
+.sidebar-links li {
+    width: 100%;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.sidebar-links li a {
+    display: flex;
+    justify-content: space-between;
+    /*بيخلي الكلام ف ناحية و السهم ف ناحية*/
+    align-items: center;
+    padding: 12px 40px;
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.1rem;
+    font-family: 'Michroma', sans-serif;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.sidebar-links li a:hover {
+    background-color: #ebebeb;
+}
+
+.arrow {
+    font-size: 1.2rem;
+    color: #999;
+    font-weight: 300;
+}
+
+/* --- البلور لما افتح السايد بار لباقي الصفحه(Overlay) --- */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    z-index: 500;
+}
+
+.overlay.show {
+    display: block;
+}
+
+/* --- حركة الـ 3 شرط لـ X --- */
+.menu-btn {
+    position: relative;
+    z-index: 1100;
+    /* عشان تفضل فوق السايد بار */
+    cursor: pointer;
+}
+
+.menu-btn.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    background-color: black;
+    /* تغيير اللون لأسود عشان يبان فوق المنيو البيضاء */
+}
+
+.menu-btn.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+    background-color: black;
+}
+
+.card {
+    width: 100%;
+    width: 1400;
+    height: 980px;
+    margin: auto;
+    margin-top: 90px;
+    margin-bottom: 40px;
+    border-radius: 40px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.gallery {
+    width: 100%;
+    width: 1400px;
+    height: 450px;
     margin: auto;
     border-radius: 40px;
-    background-color: rgba(250, 249, 249, 0);
     display: flex;
+}
+
+.content {
+    /* text-align: center; */
+    width: 100%;
+    width: 1400px;
+    height: 980px;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(10, 50, 89, 0);
+    margin: auto;
+    border-radius: 0 0 40px 40px;
+}
+
+.carrera {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 30px;
+}
+
+ul {
+    margin: 0;
+    padding: 25px;
+    /* list-style: none; */
+    list-style-position: inside;
+    font-size: 30px;
 }
 
 .img_1 {
     width: 100%;
-    width: 620px;
-    height: 460px;
-    border-radius: 40px 0 0 40px;
+    width: 700px;
+    height: 450px;
+    border-radius: 40px 0 0 0;
 }
 
 .img_2 {
     width: 100%;
-    width: 620px;
-    height: 460px;
-    border-radius: 0 40px 40px 0;
+    width: 7000px;
+    height: 450px;
+    border-radius: 0 40px 0 0;
+}
+
+.vcarrera {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.convideo {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+.button {
+    margin-top: -135px;
+    margin-left: 1060px;
+    padding: 10px 20px;
+    background: transparent;
+    cursor: pointer;
+    /* border-radius: 10px; */
+    padding: 12px 35px;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s ease;
+    position: absolute;
+
+}
+
+.button:hover {
+    background: rgba(255, 255, 255, .2);
+    color: white;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .5);
 }
