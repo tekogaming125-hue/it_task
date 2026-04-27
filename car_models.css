@@ -3,9 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    background-color:black ;
+
+/* ============================= */
+body {
+    background-color: black;
 }
+
+/* ==================================== */
 header {
     position: absolute;
     top: 0;
@@ -123,10 +127,12 @@ header {
     background: rgba(0, 0, 0, 0.6);
     display: none;
     z-index: 500;
+    transition: opacity 0.4s ease;
 }
 
 .overlay.show {
-    display: block;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 /* --- حركة الـ 3 شرط لـ X --- */
@@ -162,6 +168,7 @@ header {
     overflow: hidden;
 
 }
+
 /* الطبقة اللي بتعمل التأثير */
 .video-overlay {
     position: absolute;
@@ -169,20 +176,19 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    
+
     /* 1. تأثير الضلمة عند الحواف (Vignette) */
-    box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.9); 
-    
+    box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.9);
+
     /* 2. تدرج أسود من فوق وتحت عشان الكلام يبان (Gradient) */
-    background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.5) 0%,
-        transparent 20%,
-        transparent 80%,
-        rgba(0,0,0,0.8) 100%
-    );
-    
-    pointer-events: none; /* عشان ميعطلش أي ضغطة على الفيديو */
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.5) 0%,
+            transparent 20%,
+            transparent 80%,
+            rgba(0, 0, 0, 0.8) 100%);
+
+    pointer-events: none;
+    /* عشان ميعطلش أي ضغطة على الفيديو */
 }
 
 .back1 {
@@ -199,7 +205,7 @@ header {
     position: absolute;
     bottom: 15%;
     left: 8%;
-    z-index: 5px;
+    z-index: 5;
 }
 
 .model {
@@ -209,10 +215,10 @@ header {
     letter-spacing: -2px;
     color: white;
     font-family: 'Michroma', sans-serif;
-    z-index: 5px;
+    z-index: 5;
 }
 
-.download-btn {
+.discover-btn {
     display: inline-block;
     padding: 12px 35px;
     border: 2px solid white;
@@ -222,17 +228,16 @@ header {
     font-weight: bold;
     transition: 0.3s ease;
     background: transparent;
-    position: absolute;
-
 }
 
-.download-btn:hover {
+.discover-btn:hover {
     background: rgba(255, 255, 255, .2);
     color: white;
     backdrop-filter: blur(8px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, .5);
 
 }
+
 .model-title {
     color: white;
     font-family: 'Michroma', sans-serif;
@@ -246,7 +251,8 @@ header {
     justify-content: space-between;
     gap: 30px;
     padding: 50px 5%;
-    background-color: #111; /* متناسق مع خلفية الـ body */
+    background-color: #111;
+    /* متناسق مع خلفية الـ body */
 }
 
 .card {
@@ -255,12 +261,14 @@ header {
     overflow: hidden;
     cursor: pointer;
     background: #1c1c1c;
-    width: 400px;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* تكبير الكارد */
+    min-width: 300px;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    /* تكبير الكارد */
 }
 
 .card:hover {
-    transform: scale(1.03); /* الكارد بتكبر لما تقف عليها */
+    transform: scale(1.03);
+    /* الكارد بتكبر لما تقف عليها */
 }
 
 /* تداخل الصورة والفيديو */
@@ -270,7 +278,8 @@ header {
     height: 450px;
 }
 
-.card-img, .card-video {
+.card-img,
+.card-video {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -279,11 +288,13 @@ header {
 }
 
 .card-video {
-    opacity: 0; /* الفيديو مخفي في البداية */
+    opacity: 0;
+    /* الفيديو مخفي في البداية */
 }
 
 .card:hover .card-video {
-    opacity: 1; /* الفيديو يظهر بدل الصورة */
+    opacity: 1;
+    /* الفيديو يظهر بدل الصورة */
 }
 
 /* زرار الإكسبلور والكلام */
@@ -296,96 +307,110 @@ header {
 .explore-btn {
     display: inline-block;
     margin-top: 20px;
+    padding: 8px 20px;
     color: white;
     text-decoration: none;
-    border: 1px solid rgba(255, 255, 255, 0.3); /* إطار شفاف خفيف */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* إطار شفاف خفيف */
     font-size: 14px;
-    opacity: 0; /* الزرار مخفي */
+    opacity: 0;
+    /* الزرار مخفي */
     transform: translateY(15px);
-border-radius: 4px;
+    border-radius: 4px;
     transition: all 0.3s ease-in-out;
-    background: transparent;
 }
 
-    /* تأثير الهوفر اللي حوالين الزرار */
+/* تأثير الهوفر اللي حوالين الزرار */
 .explore-btn:hover {
-    background-color: white; /* الزرار نفسه يبيض */
-    color: black; /* الكتابة تسود */
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* الهالة اللي حوالين الزرار */
+    background-color: white;
+    /* الزرار نفسه يبيض */
+    color: black;
+    /* الكتابة تسود */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    /* الهالة اللي حوالين الزرار */
     border-color: white;
-    transform: translateY(-2px); /* رفعة بسيطة لفوق */
+    transform: translateY(-2px);
+    /* رفعة بسيطة لفوق */
 }
+
 .card:hover .explore-btn {
-    opacity: 1; /* الزرار بيبان لما تقف على الكارد */
+    opacity: 1;
+    /* الزرار بيبان لما تقف على الكارد */
     transform: translateY(0);
 }
 
 .porsche-footer {
-  background-color: #000; /* الخلفية سوداء */
-  color: #fff;
-  padding: 60px 40px 20px;
+    background-color: #000;
+    /* الخلفية سوداء */
+    color: #fff;
+    padding: 60px 40px 20px;
 }
 
 .footer-container {
-  display: flex;
-  justify-content: flex-start; /* توزيع الأعمدة من الشمال */
-  gap: 100px; /* المسافة بين الأعمدة */
-  margin-bottom: 40px;
+    display: flex;
+    justify-content: flex-start;
+    /* توزيع الأعمدة من الشمال */
+    gap: 100px;
+    /* المسافة بين الأعمدة */
+    margin-bottom: 40px;
 }
 
 .footer-column h3 {
-  font-size: 14px;
-  color: #888; /* العناوين لونها رمادي فاتح */
-  margin-bottom: 20px;
-  font-weight: normal;
+    font-size: 14px;
+    color: #888;
+    /* العناوين لونها رمادي فاتح */
+    margin-bottom: 20px;
+    font-weight: normal;
 }
 
 .footer-column ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 .footer-column ul li {
-  margin-bottom: 12px;
+    margin-bottom: 12px;
 }
 
 .footer-column ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.3s;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
 }
 
 .footer-column ul li a:hover {
-  color: #d5001c; /* لون بورش الأحمر عند التمرير */
+    color: #d5001c;
+    /* لون بورش الأحمر عند التمرير */
 }
 
 .footer-divider {
-  border: 0;
-  border-top: 1px solid #333;
-  margin: 40px 0 20px;
+    border: 0;
+    border-top: 1px solid #333;
+    margin: 40px 0 20px;
 }
 
 .footer-bottom {
-  font-size: 12px;
-  color: #aaa;
+    font-size: 12px;
+    color: #aaa;
 }
 
 .legal-links {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 .legal-links a {
-  color: #aaa;
-  text-decoration: underline;
-  margin-right: 5px;
+    color: #aaa;
+    text-decoration: underline;
+    margin-right: 5px;
 }
 
 .brand-logo {
-  text-align: center;
-  font-size: 40px;
-  letter-spacing: 15px; /* تباعد الحروف المميز لبورش */
-  margin-top: 50px;
-  font-weight: bold;
-  color: white;
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 15px;
+    /* تباعد الحروف المميز لبورش */
+    margin-top: 50px;
+    font-weight: bold;
+    color: white;
 }
