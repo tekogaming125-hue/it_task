@@ -121,7 +121,7 @@ header {
     height: 100%;
     z-index: 1001;
     transition: 0.4s;
-    padding-top: 50px;
+    padding-top: 55px;
 }
 
 .sidebar.active {
@@ -140,7 +140,7 @@ header {
     color: var(--sidebar-text);
     display: flex;
     justify-content: space-between;
-    padding: 12px 25px;
+    padding: 13px 25px;
     text-decoration: none;
     border-bottom: solid 2px #ffffff82;
     font-family: 'Michroma', sans-serif;
