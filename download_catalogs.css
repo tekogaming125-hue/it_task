@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* themes */
@@ -25,7 +26,6 @@
 
 body {
     background-color: var(--bg-color);
-    font-family: 'Poppins', sans-serif;
     color: var(--text-color);
     transition: 0.3s;
 }
@@ -88,10 +88,10 @@ header {
 
 .menu-btn span {
     display: block;
-    width: 25px;
-    height: 1.6px;
+    width: 30px;
+    height: 1.8px;
     background-color: var(--text-color);
-    margin: 5px 1px;
+    margin: 5px 2px;
     transition: 0.3s;
 }
 
@@ -148,7 +148,7 @@ header {
     text-decoration: none;
     border-bottom: solid 2px #ffffff82;
     font-family: 'Michroma', sans-serif;
-    font-size: 0.9rem;
+    font-size: 18px;
     transition: 0.1s ease;
 }
 
