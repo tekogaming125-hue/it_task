@@ -1,92 +1,141 @@
+/* ================= RESET ================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-body {
-    background-color: #828891;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
+/* themes */
+:root {
+    --bg-color: #828891;
+    --text-color: #000;
+    --card-overlay: rgba(0,0,0,0.5);
+    --sidebar-bg: #b1b7bee3;
+    --sidebar-text: #000;
+    --hover-bg: rgb(202, 201, 207);
+    --form-bg: #ffffff50;
+    --form-text: #ffffff;
+    --input-bg: rgb(255, 255, 255);
+    --btn-border: hsl(0, 0%, 100%);
+    --btn-text: #ffffff;
+}
+
+.dark {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --sidebar-bg: #1f1f1fe3;
+    --sidebar-text: #ffffff;
+    --hover-bg: #333;
+    --form-bg: rgba(0,0,0,0.6);
+    --form-text: #ffffff;
+    --input-bg: rgb(255, 255, 255);
+    --btn-border: #ffffff;
+    --btn-text: #ffffff;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    transition: 0.3s;
+}
+
+/* ================= HEADER ================= */
 header {
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    margin-top: -10px;
+    margin-bottom: -6px;
     display: flex;
-    margin-top: -40px;
     justify-content: space-between;
-    /* بيوزع العناصر: واحد شمال، واحد نص، واحد يمين */
     align-items: center;
-    padding: 20px 30px;
-    /* مسافة داخلية من الجوانب */
-    z-index: 1000;
-    background: transparent;
+    padding: 0 30px;
+    z-index: 900;
 }
 
-/* عشان نضمن إن اللوجو يفضل في النص بالظبط حتى لو العناصر اللي جنبه أحجامها مختلفة */
+/* توزيع */
 .menu-btn,
 .icon {
     flex: 1;
-    /* بيخلي الجانب اليمين والشمال واخدين نفس المساحة */
 }
 
 .icon {
     display: flex;
     justify-content: flex-end;
-    /* بيحدف الأيقونة لآخر اليمين */
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 5px;
+    color: inherit;
 }
 
 .name {
+    color: var(--text-color);
     flex: 2;
-    /* بيدي مساحة أكبر للوجو في النص */
     text-align: center;
-    font-size: 30px;
-    font-weight: 450;
+    font-size: 28px;
     letter-spacing: 3px;
-    color: white;
     font-family: 'Michroma', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* مسافة بين اللوجو والكلمة */
+    gap: 5px;
 }
 
 .logo {
-    width: 60px;
-    height: auto;
+    width: 50px;
+    z-index: 9999;
 }
 
+/* ================= MENU ================= */
 .menu-btn {
     cursor: pointer;
+    position: relative;
+    z-index: 1100;
 }
 
 .menu-btn span {
     display: block;
-    width: 28px;
-    height: 3px;
-    background-color: white;
-    margin: 5px 3px;
+    width: 25px;
+    height: 1.6px;
+    background-color: var(--text-color);
+    margin: 5px 1px;
     transition: 0.3s;
 }
 
+.menu-btn.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    background-color: #b1b7be00;
+}
 
-/* --- السايد بار --- */
+.menu-btn.open span:nth-child(2) {
+    opacity: 0;
+    background-color: #b1b7be00;
+}
+
+.menu-btn.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+    background-color: #b1b7be00;
+}
+
+.menu-btn.open pre {
+    color: #b1b7be00;
+}
+
+
+/* ================= SIDEBAR ================= */
 .sidebar {
     background-color: var(--sidebar-bg);
     position: fixed;
     top: 0;
     left: -100%;
-    width: 320px;
+    width: 350px;
     height: 100%;
-    /* background-color: #b1b7bee3; */
     z-index: 1001;
     transition: 0.4s;
-    padding-top: 100px;
+    padding-top: 55px;
 }
 
 .sidebar.active {
@@ -105,21 +154,37 @@ header {
     color: var(--sidebar-text);
     display: flex;
     justify-content: space-between;
-    padding: 18px 25px;
+    padding: 16px 25px;
     text-decoration: none;
     border-bottom: solid 2px #ffffff82;
-    /* color: #000; */
     font-family: 'Michroma', sans-serif;
-    font-size: 1.3rem;
-    transition: 0.3s;
+    font-size: 0.9rem;
+    transition: 0.1s ease;
 }
 
 .sidebar-links li a:hover {
+    transform: translateY(1px);
     background-color: var(--hover-bg);
-    /* background-color: rgb(207, 201, 201); */
     border-radius: 3px;
-    transform: translateX(8px);
 }
+
+/* ================= OVERLAY ================= */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 1000;
+}
+
+.overlay.show {
+    display: block;
+}
+/* لحد هنا شغل السايد بار والهيدر متلعبش فيه */
+
 
 /* --- Login Form Styles --- */
 .login-container {
@@ -131,7 +196,8 @@ header {
 }
 
 .login-form {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--form-bg);
+    color: var(--form-text);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 40px;
@@ -144,7 +210,7 @@ header {
 
 .login-form h2 {
     font-family: 'Michroma', sans-serif;
-    color: white;
+    color: var(--form-text);
     margin-bottom: 30px;
     letter-spacing: 5px;
     text-transform: uppercase;
@@ -152,30 +218,34 @@ header {
 
 .input-group {
     margin-bottom: 20px;
+    background: var(--input-bg);
+    color: var(--);
 }
 
 .input-group input {
     width: 100%;
     padding: 15px;
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--input-bg);
+    color: var(--form-text);
     border: none;
     outline: none;
     font-size: 1rem;
     border-radius: 2px;
     transition: 0.3s;
+    border: 1px solid var(--btn-border);
 }
 
 .input-group input:focus {
-    background: #fff;
-    box-shadow: 0 0 10px rgba(255,255,255,0.5);
+    background: var(--form-bg);
+    box-shadow: 0 0 10px;
 }
 
 .login-btn {
     width: 100%;
     padding: 15px;
-    border: 1px solid white;
-    background: transparent;
-    color: white;
+    border: 2px solid var(--btn-border);
+    background: var(--form-bg);
+    color: var(--btn-text);
     font-family: 'Michroma', sans-serif;
     font-size: 0.9rem;
     letter-spacing: 2px;
@@ -185,8 +255,8 @@ header {
 }
 
 .login-btn:hover {
-    background: white;
-    color: black;
+    background: var(--btn-text);
+    color: var(--bg-color)
 }
 
 .form-footer {
@@ -198,7 +268,7 @@ header {
 }
 
 .form-footer a {
-    color: white;
+    color: var(--form-text);
     text-decoration: none;
     opacity: 0.7;
     transition: 0.3s;
@@ -210,60 +280,17 @@ header {
 }
 
 .form-footer span {
-    color: rgba(255,255,255,0.3);
+    color: var(--form-text)
 }
 
 
 
-.arrow {
-    font-size: 1.2rem;
-    color: black;
-    font-weight: 300;
-}
+/* ===== FOOTER ===== */
 
-/* --- البلور لما افتح السايد بار لباقي الصفحه(Overlay) --- */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    display: none !important;
-    z-index: 500;
-}
-
-.overlay.show {
-    display: block;
-}
-
-/* --- حركة الـ 3 شرط لـ X --- */
-.menu-btn {
-    position: relative;
-    z-index: 1100;
-    /* عشان تفضل فوق السايد بار */
-    cursor: pointer;
-}
-
-.menu-btn.open span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-    background-color: black;
-    /* تغيير اللون لأسود عشان يبان فوق المنيو البيضاء */
-}
-
-.menu-btn.open span:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-btn.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
-    background-color: black;
-}
 .footer {
     background: #0a0a0a;
     color: #fff;
     padding: 70px 40px 20px;
-    margin-top: auto;
 }
 
 /* layout */
@@ -344,4 +371,46 @@ header {
 
 .footer-col ul li a:hover::after {
     width: 100%;
+}
+
+/* socials */
+.socials a {
+    display: inline-block;
+    margin-right: 12px;
+    color: #aaa;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* divider line */
+.footer-line {
+    height: 1px;
+    background: #222;
+    margin: 40px 0 20px;
+}
+
+/* bottom */
+.footer-bottom {
+    text-align: center;
+    font-size: 15px;
+    color: #777;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .button {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+    }
+
 }

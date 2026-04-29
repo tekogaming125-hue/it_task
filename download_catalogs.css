@@ -121,7 +121,7 @@ header {
     position: fixed;
     top: 0;
     left: -100%;
-    width: 320px;
+    width: 350px;
     height: 100%;
     z-index: 1001;
     transition: 0.4s;
@@ -144,7 +144,7 @@ header {
     color: var(--sidebar-text);
     display: flex;
     justify-content: space-between;
-    padding: 13px 25px;
+    padding: 16px 25px;
     text-decoration: none;
     border-bottom: solid 2px #ffffff82;
     font-family: 'Michroma', sans-serif;
