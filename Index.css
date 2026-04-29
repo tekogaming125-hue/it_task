@@ -435,12 +435,3 @@ header {
     opacity: 0.9;
 }
 
-.story-image {
-    margin-top: 50px;
-}
-
-.story-image img {
-    width: 100%;
-    max-width: 900px;
-    border-radius: 10px;
-}
