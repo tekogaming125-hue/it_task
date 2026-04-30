@@ -1,64 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF_8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+<script defer>
+            function toggleSidebar() {
+                const sidebar = document.getElementById('sidebar');
+                const overlay = document.getElementById('overlay');
+                const menuIcon = document.getElementById('menu-icon');
+
+                // تبديل الكلاسات
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('show');
+                menuIcon.classList.toggle('open');
+            }
+        </script>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="ahmed_anas_adham.css">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <title>Find a Dealer | FUÊRZÁ</title>
-    <link rel="stylesheet" href="find_a_dealer.css">
-</head>
+        <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+        <title>Find A Dealer</title>
 
-<body>
-    <header>
+        <script>
+            (function () {
+                if (localStorage.getItem("theme") === "dark") {
+                    document.documentElement.classList.add("dark");
+                }
+            });
+        </script>
 
-        <div id="menu-icon" class="menu-btn" onclick="toggleSidebar()">
-            <span></span>
-            <span></span>
-            <span></span>
+    </head>
+
+    <body>
+        <header>
+
+            <div id="menu-icon" class="menu-btn" onclick="toggleSidebar()">
+                <span></span>
+                <span></span>
+                <span></span>
+                <pre>Menu</pre>
+            </div>
+
+            <div class="name"><img src="Assets/Images/FUERZA_logo-removebg-preview.png" alt="" class="logo"> FUÊRZÁ</div>
+
+            <button class="icon" id="themeBtn">☀️</button>
+            <audio id="theme-sound"
+                src="Assets/Videos/Muscle cars are more than metal and horsepower _ they are attitude_ history and sound. That deep V8 rumble_ the aggressive idle_ the raw exhaust notes... th(.mp3"></audio>
+
+        </header>
+
+
+        <div id="sidebar" class="sidebar">
+            <ul class="sidebar-links">
+                <li><a href="index.html"><span>Home</span><span class="arrow">></span></a></li>
+                <li><a href="car_models.html"><span>Car Models</span><span class="arrow">></span></a></li>
+                <li><a href="download_catalogs.html"><span>Download Catalogs</span><span class="arrow">></span></a></li>
+                <li><a href="compare_cars.html"><span>Compare Cars</span><span class="arrow">></span></a></li>
+                <li><a href="book_a_test_driver.html"><span>Book A Test Driver</span><span class="arrow">></span></a></li>
+                <li><a href="find_a_dealer.html"><span>Find A Dealer</span><span class="arrow">></span></a></li>
+                <li><a href="contact_us.html"><span>Contact Us</span><span class="arrow">></span></a></li>
+                <li><a href="login.html"><span>Login</span><span class="arrow">></span></a></li>
+                <li><a href="about_us.html"><span>About Us</span><span class="arrow">></span></a></li>
+            </ul>
         </div>
 
-        <div class="name"><img src="Assets\Images\FUERZA_logo-removebg-preview.png" alt="" class="logo"> FUÊRZÁ</div>
+        <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
 
-        <button class="icon" id="mode-toggle">🌑</button>
-
-    </header>
-    <div id="sidebar" class="sidebar">
-        <ul class="sidebar-links">
-            <li><a href="index.html"><span>Home</span><span class="arrow">></span></a></li>
-            <li><a href="car_models.html"><span>Car Models</span><span class="arrow">></span></a></li>
-            <li><a href="download_catalogs.html"><span>Download Catalogs</span><span class="arrow">></span></a></li>
-            <li><a href="compare_cars.html"><span>Compare Cars</span><span class="arrow">></span></a></li>
-            <li><a href="book_a_test_driver.html"><span>Book A Test Driver</span><span class="arrow">></span></a></li>
-            <li><a href="find_a_dealer.html"><span>Find A Dealer</span><span class="arrow">></span></a></li>
-            <li><a href="contact_us.html"><span>Contact Us</span><span class="arrow">></span></a></li>
-            <li><a href="login.html"><span>Login</span><span class="arrow">></span></a></li>
-            <li><a href="about_us.html"><span>About Us</span><span class="arrow">></span></a></li>
-        </ul>
-    </div>
-
-
-    <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
-
-    <header class="map-header">
+    <section class="map-section">
         <div class="search-box">
             <input type="text" placeholder="Search for FUÊRZÁ partners...">
         </div>
-    </header>
+    </section>
 
     <div id="map"></div>
-
-    <footer class="footer-demo">
-        <h2>FUÊRZÁ</h2>
-        <p>Driven by performance, built for excellence.</p>
-    </footer>
-
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    
+
     <script>
         // التأكد من تحميل الصفحة أولاً
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // إنشاء الخريطة
             var map = L.map('map').setView([48.8566, 12.3522], 4);
 
@@ -71,11 +91,11 @@
                 html: 'London',
                 iconSize: [80, 25]
             });
-            L.marker([51.5074, -0.1278], {icon: customIcon}).addTo(map);
+            L.marker([51.5074, -0.1278], { icon: customIcon }).addTo(map);
         });
     </script>
 
-    <footer class="footer">
+<footer class="footer">
 
             <div class="footer-top">
 
@@ -95,7 +115,7 @@
                         <li><a href="compare_cars.html">Compare Cars</a></li>
                     </ul>
                 </div>
-                
+
                 <!-- Services -->
                 <div class="footer-col">
                     <h3>Services</h3>
@@ -104,6 +124,7 @@
                         <li><a href="find_a_dealer.html">Find Dealer</a></li>
                         <li><a href="contact_us.html">Support</a></li>
                         <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="Login.html">Login</a></li>
                     </ul>
                 </div>
 
@@ -127,18 +148,44 @@
             </div>
 
         </footer>
-    <script>
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-            const menuIcon = document.getElementById('menu-icon');
 
-            // تبديل الكلاسات
-            sidebar.classList.toggle('active');
-            overlay.classList.toggle('show');
-            menuIcon.classList.toggle('open');
-        }
-    </script>
+        <script>
+            let btn = document.getElementById("themeBtn");
+
+            // 1. تعريف ملف الصوت (تأكد من المسار الصحيح للملف)
+            let themeSound = new Audio("Assets/Videos/Muscle cars are more than metal and horsepower _ they are attitude_ history and sound. That deep V8 rumble_ the aggressive idle_ the raw exhaust notes... th(.mp3");
+
+            // تحميل الثيم المحفوظ
+            if (localStorage.getItem("theme") === "dark") {
+                document.documentElement.classList.add("dark");
+            }
+
+            // تحديث الأيقونة
+            function updateIcon() {
+                btn.textContent = document.documentElement.classList.contains("dark")
+                    ? "🌑"
+                    : "☀️";
+            }
+
+            updateIcon();
+
+            // تغيير الثيم
+            btn.addEventListener("click", function () {
+                // 2. تشغيل الصوت عند كل ضغطة
+                themeSound.currentTime = 0; // بيرجع الصوت للبداية عشان يلحق يشتغل لو دوست ورا بعض
+                themeSound.play();
+
+                document.documentElement.classList.toggle("dark");
+
+                if (document.documentElement.classList.contains("dark")) {
+                    localStorage.setItem("theme", "dark");
+                } else {
+                    localStorage.setItem("theme", "light");
+                }
+
+                updateIcon();
+            });
+        </script>
 </body>
 
 </html>
