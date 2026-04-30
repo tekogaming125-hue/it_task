@@ -975,7 +975,7 @@ ul {
 
 /* السكشن كله */
 .about-cards {
-    background: #000;
+    background: var(--bg-color);
     padding: 80px 10%;
     text-align: center;
 
@@ -993,7 +993,7 @@ ul {
 
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 15px;
-
+    margin-top: -40px;
     padding: 30px;
     width: 300px;
     text-align: center;
@@ -1038,12 +1038,13 @@ ul {
 }
 
 .features-header h2 {
+    margin-top: 70px;
     color: white;
     font-size: 32px;
-    letter-spacing: 6px;
+    letter-spacing: 8px;
     font-family: 'Michroma', sans-serif;
     white-space: nowrap;
 }
 .features-section {
-    background: #000;
+    background: var(--bg-color);
 }
