@@ -766,3 +766,284 @@ ul {
     transform: translateY(0);
 }
 
+
+
+
+/* Jana */
+.car-btn {
+    border-radius: 40px;
+
+    padding: 14px 35px;
+    
+    background: transparent;
+    backdrop-filter: blur(6px);
+
+    
+    color: white;
+    text-decoration: none;
+    font-family: 'Michroma', sans-serif;
+    letter-spacing: 2px;
+    font-size: 0.95rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    
+    transition: 0.4s ease;
+    z-index: 9999;
+}
+
+.car-btn:hover {
+    background: white;
+    color: black;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.video-background {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.video-background iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 177.77vh;
+    height: 100vh;
+    transform:translate(-50%,-50%);
+    pointer-events: none !important;
+}
+
+.video-background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.hero iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.hero-text {
+    position: absolute;
+    left: 1%;
+    transform:none;
+    color: white; /* 👈 ده اللي يخلي الكلام أبيض */
+    text-align: left;
+    bottom: 30px; 
+}
+
+.hero-text h1 {
+    font-size: 70px;
+}
+
+.hero-text p {
+    font-size: 20px;
+}
+
+.hero-buttons {
+    position: absolute;
+    bottom: 60px;
+    right: 5%;
+
+    display: flex;
+    gap: 15px; /* 👈 المسافة بين الزرارين */
+}
+
+.about-products {
+    padding: 80px 10%;
+    background: #0b0b0b;
+    color: white;
+    text-align: center;
+}
+
+/* العنوان مع الخطين */
+.models-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.models-header .line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, white, transparent);
+    opacity: 0.5;
+}
+
+.models-header h2 {
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: white;
+    font-family: 'Michroma', sans-serif;
+    white-space: nowrap;
+}
+
+/* النص */
+.about-text p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 16px;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+/* صور العربيات */
+.cars-grid {
+    margin-top: 50px;
+    display: flex;
+    gap: 300px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.car-item {
+    position: relative;
+    width: 450px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.car-item img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.car-item:hover img {
+    transform: scale(1.05);
+}
+
+/* زرار اكسبلور */
+.explore-btn {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 10px 25px;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(6px);
+
+    transition: 0.3s;
+}
+
+.explore-btn:hover {
+    background: white;
+    color: black;
+}
+
+
+.car-name {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+
+    color: white;
+    font-size: 18px;
+    font-family: 'Michroma', sans-serif;
+    letter-spacing: 2px;
+
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
+
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+/* السكشن كله */
+.about-cards {
+    background: #000;
+    padding: 80px 10%;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+
+/* الكارت */
+.about-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 15px;
+
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+
+    color: white;
+    transition: 0.3s;
+}
+
+/* Hover */
+.about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+/* عنوان الكارت */
+.about-card h3 {
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+
+/* النص */
+.about-card p {
+    font-size: 14px;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.features-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.features-header .line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, white, transparent);
+    opacity: 0.5;
+}
+
+.features-header h2 {
+    color: white;
+    font-size: 32px;
+    letter-spacing: 6px;
+    font-family: 'Michroma', sans-serif;
+    white-space: nowrap;
+}
+.features-section {
+    background: #000;
+}
