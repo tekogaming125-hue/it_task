@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* themes */
@@ -14,28 +15,27 @@
     --sidebar-text: #000;
     --hover-bg: rgb(202, 201, 207);
     --form-bg: #ffffff50;
-    --form-text: #ffffff;
+    --form-text: #000000;
     --input-bg: rgb(255, 255, 255);
     --btn-border: hsl(0, 0%, 100%);
-    --btn-text: #ffffff;
+    --btn-text: #000000;
 }
 
 .dark {
     --bg-color: #000000;
-    --text-color: #ffffff;
+    --text-color: #ff0000d4;
     --sidebar-bg: #1f1f1fe3;
-    --sidebar-text: #ffffff;
+    --sidebar-text: #ff0000d4;
     --hover-bg: #333;
     --form-bg: rgba(0,0,0,0.6);
-    --form-text: #ffffff;
+    --form-text: #ff0000d4;
     --input-bg: rgb(255, 255, 255);
-    --btn-border: #ffffff;
-    --btn-text: #ffffff;
+    --btn-border: #ff0000d4;
+    --btn-text: #ff0000d4;
 }
 
 body {
     background-color: var(--bg-color);
-    font-family: 'Poppins', sans-serif;
     color: var(--text-color);
     transition: 0.3s;
 }
@@ -98,10 +98,10 @@ header {
 
 .menu-btn span {
     display: block;
-    width: 25px;
-    height: 1.6px;
+    width: 30px;
+    height: 1.8px;
     background-color: var(--text-color);
-    margin: 5px 1px;
+    margin: 5px 2px;
     transition: 0.3s;
 }
 
@@ -158,7 +158,7 @@ header {
     text-decoration: none;
     border-bottom: solid 2px #ffffff82;
     font-family: 'Michroma', sans-serif;
-    font-size: 0.9rem;
+    font-size: 18px;
     transition: 0.1s ease;
 }
 
@@ -183,6 +183,8 @@ header {
 .overlay.show {
     display: block;
 }
+
+
 /* لحد هنا شغل السايد بار والهيدر متلعبش فيه */
 
 
@@ -372,7 +374,6 @@ header {
 .footer-col ul li a:hover::after {
     width: 100%;
 }
-<<<<<<< HEAD
 
 /* socials */
 .socials a {
@@ -414,20 +415,4 @@ header {
         flex-direction: column;
     }
 
-=======
-/* Style for error messages */
-.error-msg {
-    color: #ff4d4d;
-    font-size: 0.75rem;
-    display: block;
-    text-align: left;
-    margin-top: 5px;
-    height: 15px; /* Prevents form jumping */
-}
-
-/* Red border for invalid inputs */
-.input-group input.invalid {
-    border: 1px solid #ff4d4d;
-    background: rgba(255, 77, 77, 0.1);
->>>>>>> 2dc620839232895e0bcba6b17714b1de95c0373d
 }
