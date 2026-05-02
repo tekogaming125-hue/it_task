@@ -15,7 +15,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="ahmed_anas_adham.css">
+        <link rel="stylesheet" href="css_file.css">
         <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
         <title>Download Catalogs</title>
 
@@ -80,7 +80,7 @@
                     <div class="convideo">
                         <h2 class="model">Porsche Taycan 4S:<br>(⚡Porsche’s first electric sports car)</h2>
 
-                        <ul>
+                        <ul class="ahmedul">
                             <li>Battery: Performance Battery Plus</li>
                             <li>Power: ~530 HP (Overboost)</li>
                             <li>0–100 km/h: ~4.0 second</li>
@@ -88,7 +88,7 @@
                             <li>Type: Fully electric</li>
                             <li>Category: Electric Sports Sedan</li>
                             <li>Features:
-                                <ul>
+                                <ul class="ahmedul">
                                     <li>Very fast charging</li>
                                     <li>High stability</li>
                                     <li>Futuristic design</li>
@@ -118,7 +118,7 @@
                     <div class="convideo">
                         <h2 class="model"> Porsche Panamera GTS:<br>(🔥Luxury sport king)</h2>
 
-                        <ul>
+                        <ul class="ahmedul">
                             <li>Engine: 4.0L V8 Twin-Turbo</li>
                             <li>Power: 480 HP</li>
                             <li>0–100 km/h: ~3.9 seconds</li>
@@ -126,7 +126,7 @@
                             <li>Type: Gasoline</li>
                             <li>Category: Luxury Sport Sedan</li>
                             <li>Features:
-                                <ul>
+                                <ul class="ahmedul">
                                     <li>Very comfortable ride</li>
                                     <li>Luxury + speed combined</li>
                                     <li>Perfect for city & long trips</li>
@@ -155,7 +155,7 @@
                     <div class="convideo">
                         <h2 class="model">Porsche Taycan Turbo S:<br>(⚡Porsche’s most powerful EV)</h2>
 
-                        <ul>
+                        <ul class="ahmedul">
                             <li>High-performance battery</li>
                             <li>Power: 761 HP (Overboost)</li>
                             <li>0–100 km/h: ~2.4 seconds</li>
@@ -163,7 +163,7 @@
                             <li>Type: Electric</li>
                             <li>Category: Ultra Electric Performance</li>
                             <li>Features:
-                                <ul>
+                                <ul class="ahmedul">
                                     <li>Fastest Porsche EV</li>
                                     <li>Extreme acceleration</li>
                                     <li>Futuristic driving experience</li>
@@ -193,7 +193,7 @@
                     <div class="convideo">
                         <h2 class="model">Porsche 911 carrera (992.2):<br>(🔥The core Porsche icon)</h2>
 
-                        <ul>
+                        <ul class="ahmedul">
                             <li>Engine: 3.0L Twin-Turbo Flat-6</li>
                             <li>Power: ~394 HP</li>
                             <li>0–100 km/h: ~4.1 seconds</li>
@@ -201,7 +201,7 @@
                             <li>Type: Gasoline</li>
                             <li>Category: Sports Coupe</li>
                             <li>Features:
-                                <ul>
+                                <ul class="ahmedul">
                                     <li>Pure sports driving experience</li>
                                     <li>Excellent balance</li>
                                     <li>Classic-modern design</li>
@@ -231,7 +231,7 @@
                     <div class="convideo">
                         <h2 class="model">Porsche 911 Turbo S:<br>(🔥The real beast)</h2>
 
-                        <ul>
+                        <ul class="ahmedul">
                             <li>Engine: 3.8L Twin-Turbo Flat-6</li>
                             <li>Power: ~650 HP</li>
                             <li>0–100 km/h: ~2.7 seconds</li>
@@ -239,7 +239,7 @@
                             <li>Type: Gasoline</li>
                             <li>Category: Super Sports Car</li>
                             <li>Features:
-                                <ul>
+                                <ul class="ahmedul">
                                     <li>One of the fastest 911s</li>
                                     <li>AWD (All-Wheel Drive)</li>
                                     <li>Insane performance on all roads</li>
@@ -314,7 +314,7 @@
             let btn = document.getElementById("themeBtn");
 
             // 1. تعريف ملف الصوت (تأكد من المسار الصحيح للملف)
-            let themeSound = new Audio("Assets/Videos/Muscle cars are more than metal and horsepower _ they are attitude_ history and sound. That deep V8 rumble_ the aggressive idle_ the raw exhaust notes... th(.mp3");
+            let themeSound = new Audio("Assets/Audio/Muscle cars are more than metal and horsepower _ they are attitude_ history and sound. That deep V8 rumble_ the aggressive idle_ the raw exhaust notes... th(.mp3");
 
             // تحميل الثيم المحفوظ
             if (localStorage.getItem("theme") === "dark") {
